@@ -110,7 +110,9 @@ function dungeon_world_monster_compendium_feeds_importer_default() {
     'parser' => array(
       'plugin_key' => 'FeedsExXml',
       'config' => array(
-        'use_tidy' => FALSE,
+        'context' => array(
+          'value' => 'monsters/monster',
+        ),
         'sources' => array(
           'name' => array(
             'name' => 'name',
@@ -123,7 +125,7 @@ function dungeon_world_monster_compendium_feeds_importer_default() {
             'name' => 'monster tags',
             'value' => 'tags/tag',
             'raw' => 0,
-            'debug' => 1,
+            'debug' => 0,
             'weight' => '2',
           ),
           'setting' => array(
@@ -179,18 +181,23 @@ function dungeon_world_monster_compendium_feeds_importer_default() {
             'name' => 'moves',
             'value' => 'moves/move',
             'raw' => 0,
-            'debug' => 1,
+            'debug' => 0,
             'weight' => '10',
           ),
-        ),
-        'context' => array(
-          'value' => 'monsters/monster',
+          'attack_tags' => array(
+            'name' => 'attack tags',
+            'value' => 'stats/tag',
+            'raw' => 0,
+            'debug' => 1,
+            'weight' => '11',
+          ),
         ),
         'display_errors' => 1,
+        'debug_mode' => 1,
         'source_encoding' => array(
           0 => 'auto',
         ),
-        'debug_mode' => 0,
+        'use_tidy' => FALSE,
       ),
     ),
     'processor' => array(
@@ -249,6 +256,12 @@ function dungeon_world_monster_compendium_feeds_importer_default() {
             'source' => 'setting',
             'target' => 'field_setting',
             'unique' => FALSE,
+          ),
+          10 => array(
+            'source' => 'attack_tags',
+            'target' => 'field_attack_tags',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
         ),
         'update_existing' => '2',

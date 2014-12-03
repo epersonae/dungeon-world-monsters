@@ -22,7 +22,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -51,7 +51,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 1,
     ),
   );
 
@@ -91,7 +91,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 6,
     ),
   );
 
@@ -131,7 +131,47 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -1,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-monster-field_attack_tags'
+  $field_instances['node-monster-field_attack_tags'] = array(
+    'bundle' => 'monster',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_attack_tags',
+    'label' => 'Attack Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 7,
     ),
   );
 
@@ -171,7 +211,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 8,
     ),
   );
 
@@ -211,7 +251,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 5,
     ),
   );
 
@@ -227,7 +267,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -251,7 +291,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
@@ -267,7 +307,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -291,7 +331,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 10,
     ),
   );
 
@@ -328,7 +368,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -344,7 +384,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -365,7 +405,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => -2,
+      'weight' => 3,
     ),
   );
 
@@ -373,6 +413,7 @@ function dungeon_world_monster_compendium_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Armor');
   t('Attack');
+  t('Attack Tags');
   t('Description');
   t('Features');
   t('Hit Points');
