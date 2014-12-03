@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Dungeon World Monster Compendium feature.
+ */
+
+include_once 'dungeon_world_monster_compendium.features.inc';
