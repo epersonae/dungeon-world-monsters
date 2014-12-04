@@ -18,7 +18,7 @@
     
     <xsl:template match="Root">
         <xsl:variable name="setting"><xsl:value-of select="h1"/></xsl:variable>
-            <xsl:for-each select="Body/p[@aid:pstyle='MonsterName']">
+        <xsl:for-each select="Body/p[@aid:pstyle='MonsterName']">
             <monster>
                 <name><xsl:value-of select="normalize-space(text())"/></name>
                 <tags>
@@ -49,7 +49,7 @@
                 
                 <qualities><xsl:value-of select="normalize-space(following-sibling::p[@aid:pstyle='MonsterQualities']/text())"/></qualities>
                 <description><xsl:value-of select="normalize-space(following-sibling::p[@aid:pstyle='MonsterDescription']/text())"/></description>
-                <instinct><xsl:value-of select="substring(normalize-space(following-sibling::p[@aid:pstyle='MonsterDescription']/text()[preceding-sibling::em]),3)"/></instinct>
+                <instinct><xsl:value-of select="substring(normalize-space(following-sibling::p[@aid:pstyle='MonsterDescription']/text()[preceding-sibling::em[position()=last()]]),3)"/></instinct>
                 <moves>
                     <xsl:for-each select="following-sibling::ul[1]/li">
                         <move><xsl:value-of select="."/></move>
